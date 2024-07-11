@@ -1,5 +1,3 @@
-const apiKey = 'sk-proj-ouyhLTaJK3jbeEoMgrHcT3BlbkFJs1ZBfyVzpx6UVmHivaiG';
-
 async function sendMessage() {
     const userInput = document.getElementById('user-input');
     const message = userInput.value;
