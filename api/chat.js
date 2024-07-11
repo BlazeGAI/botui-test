@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
             messages: [{ role: 'user', content: userMessage }],
         }, {
             headers: {
-                Authorization: `Bearer YOUR_OPENAI_API_KEY`,
+                Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
                 'Content-Type': 'application/json',
             },
         });
