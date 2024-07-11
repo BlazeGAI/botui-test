@@ -18,18 +18,10 @@ async function sendMessage() {
     userInput.value = '';
 
     try {
-        // OpenAI API call
-        const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-            model: "gpt-4",
-            messages: [{ role: "user", content: message }],
-        }, {
-            headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Content-Type': 'application/json'
-            }
-        });
+        // Server API call
+        const response = await axios.post('/api/chat', { message });
 
-        const botMessage = response.data.choices[0].message.content;
+        const botMessage = response.data.message;
 
         // Bot response
         const botMessageDiv = document.createElement('div');
@@ -39,7 +31,6 @@ async function sendMessage() {
 
         // Scroll to the bottom of the chat box
         chatBox.scrollTop = chatBox.scrollHeight;
-
     } catch (error) {
         console.error('Error:', error);
         const botMessageDiv = document.createElement('div');
