@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         try {
             // Server API call
-            const response = await axios.post('botui-test-kappa.vercel.app/api/chat', { message });
+            const response = await axios.post('https://botui-test-kappa.vercel.app/api/chat', { message });
 
             const botMessage = response.data.message;
 
